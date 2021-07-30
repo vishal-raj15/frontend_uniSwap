@@ -2005,7 +2005,7 @@
       ]
     },
     "C:\\Users\\mytuf\\OneDrive\\Desktop\\UniswapClone\\UniClone\\contracts\\core\\Token1.sol": {
-      "lastModificationDate": 1627475684679,
+      "lastModificationDate": 1627554070318,
       "contentHash": "b75985705fd8c07363b6afee6698b90d",
       "sourceName": "contracts/core/Token1.sol",
       "solcConfig": {
@@ -2266,8 +2266,8 @@
       ]
     },
     "C:\\Users\\mytuf\\OneDrive\\Desktop\\UniswapClone\\UniClone\\contracts\\core\\Token2.sol": {
-      "lastModificationDate": 1627475684679,
-      "contentHash": "90e4f07172d29f780249c4edd0445054",
+      "lastModificationDate": 1627554036344,
+      "contentHash": "f141780415d47cacdb040a7abb4105fe",
       "sourceName": "contracts/core/Token2.sol",
       "solcConfig": {
         "version": "0.5.16",
