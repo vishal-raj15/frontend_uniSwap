@@ -76,7 +76,7 @@ function App() {
     }
   }
 
-  async function addLiquidity() {
+  async function addliquidity() {
     const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' })
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -86,7 +86,16 @@ function App() {
     const r02 = new ethers.Contract(router.address, router.abi, signer)
     const factory = new ethers.Contract(Factory.address, Factory.abi, signer)
 
-    await factory.createPair(tk1.address, tk2.address)
+    console.log( tk1.address)
+    console.log( tk2.address)
+    console.log( r02.address)
+
+    var d = new Date()
+
+
+   // const pairAddress = await factory.createPair.call(tk1.address, tk2.address)
+    const pair = await factory.createPair(tk1.address, tk2.address)
+    console.log( pair);
     await tk1.approve(router.address, MaxUint256)
     await tk2.approve(router.address, MaxUint256)
     await r02.addLiquidity(
@@ -97,9 +106,13 @@ function App() {
       token1Amount,
       token2Amount,
       account,
-      MaxUint256,
-      overrides
+      Math.floor(d / 1000) + 60 * 10
     )
+
+    console.log( " liquidity has been added");
+    // const pair = await Pair.at(pairAddress);
+    // const balance = await pair.balanceOf(admin); 
+    // console.log(`balance LP: ${balance.toString()}`);
   }
 
   return (
@@ -127,7 +140,7 @@ function App() {
         <br></br>
         <input onChange={e => setAmounttk2(expandTo18Decimals(e.target.value))} placeholder="Amount TK2" />
         <br></br>
-        <button onClick={addLiquidity}>Add Liquidity</button>
+        <button onClick={addliquidity}>Add Liquidity</button>
     </div>
   );
 }
